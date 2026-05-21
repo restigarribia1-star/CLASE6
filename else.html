@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>If / Else - Aprende fácil</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; text-align: center; }
+        button { padding: 12px 25px; font-size: 16px; background: #9d4561; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        input { padding: 12px; font-size: 18px; width: 150px; text-align: center; border: 2px solid #ddd; border-radius: 5px; margin: 10px; }
+        .resultado { font-size: 24px; padding: 20px; margin-top: 20px; border-radius: 10px; }
+        .verde { background: #d4edda; color: #155724; }
+        .rojo { background: #f8d7da; color: #721c24; }
+        .azul { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>🤔 ¿Par o Impar?</h1>
+    
+    <input type="number" id="numeroInput" placeholder="Escribe un número">
+    <br>
+    <button onclick="evaluar()">🔍 Evaluar</button>
+    <button onclick="limpiar()">🗑️ Limpiar</button>
+    
+    <div id="mensaje" style="margin-top: 30px;"></div>
+    
+    <div class="resultado azul" style="text-align: left;">
+        <h3>📖 ¿Cómo funciona if/else?</h3>
+        <p><strong>if (condición) {</strong> ← si se cumple<br>
+        &nbsp;&nbsp;&nbsp;// haz esto<br>
+        <strong>} else {</strong> ← si NO se cumple<br>
+        &nbsp;&nbsp;&nbsp;// haz esto otro<br>
+        <strong>}</strong></p>
+        <p>🎯 <strong>Ejemplo:</strong><br>
+        if (numero % 2 == 0) { → si el residuo es 0<br>
+        &nbsp;&nbsp;&nbsp;es PAR<br>
+        } else { → si el residuo NO es 0<br>
+        &nbsp;&nbsp;&nbsp;es IMPAR<br>
+        }</p>
+    </div>
+
+    <script>
+        function evaluar() {
+            let numero = document.getElementById('numeroInput').value;
+            let mensajeDiv = document.getElementById('mensaje');
+            
+            if (numero === "") {
+                mensajeDiv.innerHTML = '<div class="resultado rojo">⚠️ Escribe un número primero</div>';
+            } else {
+                numero = Number(numero);
+                
+                if (numero % 2 === 0) {
+                    mensajeDiv.innerHTML = `<div class="resultado verde">✅ ${numero} es PAR</div>`;
+                } else {
+                    mensajeDiv.innerHTML = `<div class="resultado verde">✅ ${numero} es IMPAR</div>`;
+                }
+            }
+        }
+        
+        function limpiar() {
+            document.getElementById('numeroInput').value = '';
+            document.getElementById('mensaje').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
