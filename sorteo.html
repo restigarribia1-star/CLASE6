@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Math.random</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; text-align: center; }
+        button { padding: 15px 30px; font-size: 18px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px; }
+        .numero { font-size: 64px; font-weight: bold; color: #FF5722; margin: 30px 0; padding: 20px; background: #FFF3E0; border-radius: 10px; }
+        .info { background: #f5f5f5; padding: 15px; border-radius: 5px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>🎲 Math.random()</h1>
+    
+    <div class="numero" id="display">?</div>
+
+    <button onclick="entre0y1()">🎲 Entre 0 y 1</button>
+    <button onclick="entre0y10()">🎲 Entre 0 y 10</button>
+    <button onclick="entre1y10()">🎲 Entre 1 y 10</button>
+    <button onclick="entre1y100()">🎲 Entre 1 y 100</button>
+
+    <div class="info" id="info">
+        <p><strong>Math.random()</strong> = <span id="valor">0.734</span></p>
+        <p><strong>Math.random() * 10</strong> = <span id="valor2">7.34</span></p>
+        <p><strong>Math.floor(Math.random() * 10) + 1</strong> = <span id="valor3">8</span></p>
+    </div>
+
+    <script>
+        function entre0y1() {
+            let num = Math.random();
+            document.getElementById('display').textContent = num.toFixed(4);
+            document.getElementById('valor').textContent = num.toFixed(4);
+        }
+        
+        function entre0y10() {
+            let num = Math.random() * 10;
+            document.getElementById('display').textContent = num.toFixed(4);
+            document.getElementById('valor2').textContent = num.toFixed(4);
+        }
+        
+        function entre1y10() {
+            let num = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('display').textContent = num;
+            document.getElementById('valor3').textContent = num;
+        }
+
+        function entre1y100() {
+            let num = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('display').textContent = num;
+            document.getElementById('valor3').textContent = num;
+        }
+    </script>
+</body>
+</html>
